@@ -30,7 +30,7 @@ int main(void)
     uint16_t *numptr=&num;                              // numptr is defined
 	
 		
-     printf("Enter a five digit numerical PIN code NOW!\n");
+   
 	
     while(1)
      {
