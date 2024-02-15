@@ -20,6 +20,9 @@ extern uint8_t Read_Keypad(uint16_t *numptr);
 
 int main(void)
 {
+
+    printf("ENTER IN 5 DIGITS NOW OR FACE MY WRATH\n");
+	
     SysTick_Init();
     Keypad_Init( );                                     // Call initialization functions for functionality
     uint16_t num, pressed;                              // num is modified over a pointer
