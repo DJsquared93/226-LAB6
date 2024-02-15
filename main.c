@@ -10,7 +10,8 @@
 *                   PC4-6=> Cols
 *********************************************************/
 
-#include "keypad.h" //Test 2nd test
+#include "keypad.h" 
+#include <string.h>
 
 extern void Keypad_Init (void);                                // Initialize Functions
 extern void SysTick_Init(void);                                // Initialize Functions
@@ -31,12 +32,52 @@ int main(void)
 	
 		
      printf("Enter a five digit numerical PIN code NOW!\n");
+		char sequence[5] = {};
+		int i = 4;
+		char temp;
+	
 	
     while(1)
      {
-         pressed = Read_Keypad(numptr);                 // Call Function to read Keypad
-				 if(pressed)
-         Print_Keys(numptr);
-         SysTick_Delay(10);
+			 
+			 
+         //pressed = Read_Keypad(numptr);                 // Call Function to read Keypad
+			 
+				 pressed = Read_Keypad(numptr);   
+				 if(pressed) {
+					 temp = return_Keys(numptr);
+					 printf("%c\n", temp);
+					 
+					 if(temp == '*'){
+						 printf("invalid input, please enter a digit 0 - 9\n");
+						 
+						 
+					 }
+					 
+					else if(temp == '#'){
+						 printf("%s\n", sequence);
+						 
+					 }
+					 
+					 
+					 else{
+						while(i >=0){
+							//temp = sequence[i];
+							sequence[i - 1] = sequence[i];
+							i--;
+						}
+						i = 4;
+					 sequence[4] = temp;
+					 }
+					 //SysTick_Delay(10);
+					 
+					 
+				 }
+			 
+			 
+			 //printf("%s", sequence);
+        // Print_Keys(numptr);
+         //SysTick_Delay(10);
      }
 }
+
