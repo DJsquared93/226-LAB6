@@ -10,7 +10,7 @@
 *                   PC4-6=> Cols
 *********************************************************/
 
-#include "keypad.h"
+#include "keypad.h" //Test
 
 extern void Keypad_Init (void);                                // Initialize Functions
 extern void SysTick_Init(void);                                // Initialize Functions
