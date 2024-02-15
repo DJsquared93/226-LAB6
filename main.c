@@ -30,9 +30,9 @@ int main(void)
     uint16_t *numptr=&num;                              // numptr is defined
 	
 		
-		printf("Enter a five digit numerical PIN code NOW!\n");
+     printf("Enter a five digit numerical PIN code NOW!\n");
 	
-		while(1)
+    while(1)
      {
          pressed = Read_Keypad(numptr);                 // Call Function to read Keypad
 				 if(pressed)
