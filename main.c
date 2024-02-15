@@ -1,6 +1,9 @@
 /*******************************************************
 * Name:							Atilla Ozgur Cakmak
 * Course:           EGR 226 - Microcontroller Programming and Applications
+/*******************************************************
+* Name:							Atilla Ozgur Cakmak
+* Course:           EGR 226 - Microcontroller Programming and Applications
 * Project:          Keypad Intro
 * File:             main.c
 * Description:      A for loop assigns cols as GND one by one and manually 
@@ -10,7 +13,8 @@
 *                   PC4-6=> Cols
 *********************************************************/
 
-#include "keypad.h" //Test 2nd test
+#include "keypad.h" 
+#include <string.h>
 
 extern void Keypad_Init (void);                                // Initialize Functions
 extern void SysTick_Init(void);                                // Initialize Functions
@@ -20,6 +24,9 @@ extern uint8_t Read_Keypad(uint16_t *numptr);
 
 int main(void)
 {
+
+    printf("ENTER IN 5 DIGITS NOW OR FACE MY WRATH\n");
+	
     SysTick_Init();
     Keypad_Init( );                                     // Call initialization functions for functionality
     uint16_t num, pressed;                              // num is modified over a pointer
@@ -27,13 +34,29 @@ int main(void)
     uint16_t *numptr=&num;                              // numptr is defined
 	
 		
-		printf("Enter a five digit numerical PIN code NOW!\n");
+     printf("Enter a five digit numerical PIN code NOW!\n");
+		char sequence[5] = {};
+		int i = 0;
 	
-		while(1)
+	
+    while(1)
      {
-         pressed = Read_Keypad(numptr);                 // Call Function to read Keypad
-				 if(pressed)
-         Print_Keys(numptr);
+			 
+			 
+         //pressed = Read_Keypad(numptr);                 // Call Function to read Keypad
+			 for(; i<5;){
+				 pressed = Read_Keypad(numptr);   
+				 if(pressed) {
+					 
+					 sequence[i] = return_Keys(numptr);
+					 SysTick_Delay(10);
+					 i++;  
+					 
+				 }
+			 }
+			 
+			 printf("%s", sequence);
+        // Print_Keys(numptr);
          SysTick_Delay(10);
      }
 }
