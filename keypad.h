@@ -40,5 +40,5 @@ void SysTick_Init(void);                                // Initialize Functions
 void SysTick_Delay(uint16_t delay);                     // Initialize Functions
 void Print_Keys (uint16_t *numptr);                     // Print Keypress
 uint8_t Read_Keypad(uint16_t *numptr);                  // Keypad scan subroutine
-
+char return_Keys(uint16_t *numptr );
 #endif /* KEYPAD_H_ */
