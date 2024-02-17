@@ -20,7 +20,7 @@ extern void Print_Keys (uint16_t *numptr);                     // Print Keypress
 extern uint8_t Read_Keypad(uint16_t *numptr);
 
 int main(void)
-{
+   {
 
     printf("ENTER IN 5 DIGITS NOW OR FACE MY WRATH\n");
 	
@@ -33,7 +33,7 @@ int main(void)
 		
      printf("Enter a five digit numerical PIN code NOW!\n");
 		char sequence[5] = {};
-		int i = 4;
+		int i = 0;
 		char temp;
 	
 	
@@ -61,12 +61,12 @@ int main(void)
 					 
 					 
 					 else{
-						while(i >=0){
+						while(i <=3){
 							//temp = sequence[i];
-							sequence[i - 1] = sequence[i];
-							i--;
+							sequence[i] = sequence[i+1];
+							i++;
 						}
-						i = 4;
+						i = 0;
 					 sequence[4] = temp;
 					 }
 					 //SysTick_Delay(10);
@@ -80,4 +80,3 @@ int main(void)
          //SysTick_Delay(10);
      }
 }
-
