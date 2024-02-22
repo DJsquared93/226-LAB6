@@ -55,6 +55,10 @@ int main(void)
 					 }
 					 
 					else if(temp == '#'){
+						
+						if(strlen(sequence) <5){
+							printf("Please enter at least 5 digits\n");
+						}
 						 printf("%s\n", sequence);
 						 
 					 }
